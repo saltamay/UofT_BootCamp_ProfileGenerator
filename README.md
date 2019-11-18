@@ -8,14 +8,9 @@ Node.js application that dynamically generates a PDF profile from a GitHub usern
 1. [Getting Started](#getting-started) 
 1. [Business Context](#business-context)
 1. [Development Strategy](#development-strategy)
-<!-- 1. [Dependencies](#dependencies) -->
 1. [Built With](#built-with)
 1. [Minimum Requirements](#minimum-requirements)
 1. [Submission](#submission)
-<!-- 1. [Directions For Future Deveopment](#directions-for-future-development)
-1. [University of Toronto Full-Stack Web Developer Bootcamp Project #1 Details](#)
-  1. [Application Requirements](#application-requirements)
-  1. [Presentation Requirements](#presentation-requirements) -->
 
 ## About
 
