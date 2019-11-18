@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6,
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.left {
+    background-color: lightgrey;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dev-hero {
+    background-color: salmon;
+    height: 100%;
+    padding: 0 !important;
+}
+
+#dev-img {
+    height: 50%;
+}
+
+.dev-info {
+    
+}
+
+#dev-bio {
+    
+}
+
+.dev-cards {
+    background-color: white;
+    height: 50%;
+}
+
+.social-links {
+
+}
+
+.social-links li {
+    display: inline-block;
+}
