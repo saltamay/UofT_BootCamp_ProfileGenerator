@@ -1,4 +1,4 @@
-# profile-generator
+# UofT Full-Stack Web Development Bootcamp Project #7: Developer Profile Generator
 
 Node.js application that dynamically generates a PDF profile from a GitHub username.
 
@@ -8,9 +8,10 @@ Node.js application that dynamically generates a PDF profile from a GitHub usern
 1. [Getting Started](#getting-started) 
 1. [Business Context](#business-context)
 1. [Development Strategy](#development-strategy)
-1. [Dependencies](#dependencies)
+<!-- 1. [Dependencies](#dependencies) -->
 1. [Built With](#built-with)
 1. [Minimum Requirements](#minimum-requirements)
+1. [Submission](#submission)
 <!-- 1. [Directions For Future Deveopment](#directions-for-future-development)
 1. [University of Toronto Full-Stack Web Developer Bootcamp Project #1 Details](#)
   1. [Application Requirements](#application-requirements)
@@ -53,7 +54,7 @@ Refer to the [design mockup](./assets/09-NodeJS-homework-demo.pdf).
 
 ## Development Strategy
 
-The user will be prompted for a favorite color, which will be used as the background color for cards.
+The users will be prompted for their GitHub handle and their favorite color, which will be used as the background color for cards.
 
 The PDF will be populated with the following:
 
@@ -69,10 +70,12 @@ The PDF will be populated with the following:
 * Number of GitHub stars
 * Number of users following
 
-## Dependencies
-
 ## Built With
-
+* [Materialize CSS](https://materializecss.com/) -- Frontend CSS Framework
+* [Node.js](https://nodejs.org/en/docs/) -- JavaScript runtime
+* [Inquirer](https://www.npmjs.com/package/inquirer) -- Interactive CLI
+* [Axios](https://www.npmjs.com/package/axios) -- Promise based HTTP client for the browser and node.js
+* [Puppeteer](https://www.npmjs.com/package/puppeteer) -- Generate screenshots and PDFs of pages.
 
 ## Minimum Requirements
 
@@ -89,6 +92,16 @@ The PDF will be populated with the following:
 * The generated resume includes the number of: public repositories, followers, GitHub stars and following count.
 
 * The background color of the generated PDF matches the color that the user provides.
+
+## Submission
+
+You are required to submit the following:
+
+* An animated GIF demonstrating the app functionality
+
+* A generated PDF of your GitHub profile
+
+* The URL of the GitHub repository
 
 
 
