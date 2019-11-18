@@ -1,9 +1,8 @@
 const fs = require('fs');
 const http = require('http');
-const inquirer = require('inquirer');
-const axios = require('axios');
 const puppeteer = require('puppeteer');
-const ProfileGenerator = require('./profileGenerator');
+const Profile = require('./Profile');
+const User = require('./User');
 
 
 function App() {
@@ -48,30 +47,10 @@ function App() {
 
         try {
 
-            // Get user's github profile handle and their favorite color
-            const userInput =
-                await inquirer
-                    .prompt([
-                        {
-                            type: "input",
-                            message: "Enter your GitHub handle: ",
-                            name: "login"
-                        },
-                        {
-                            type: "input",
-                            message: "What is your favorite color? ",
-                            name: "color"
-                        }
-                    ]);
+            const user = new User();
+            const userDetails = await user.getUserDetails();
 
-            let userDetails = await axios.get(`https://api.github.com/users/${userInput.login}`);
-
-            userDetails = {
-                ...userInput,
-                ...userDetails.data
-            };
-
-            const profile = new ProfileGenerator(userDetails);
+            const profile = new Profile(userDetails);
             const profileHTML = profile.html;
 
             const responseHTML = await this.writeFileAsync('index.html', profileHTML);
