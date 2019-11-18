@@ -25,19 +25,18 @@ const printPDF = async () => {
     const options = {
         path: './profile.pdf',
         printBackground: true,
-        landscape: true
+        format: 'A4',
+        pageRanges: '1'
     }
 
     await page.setViewport({
-        width: 960,
-        height: 720,
-        deviceScaleFactor: 1,
+        width: 1440,
+        height: 900,
+        deviceScaleFactor: 2,
     });
 
-    await page.goto('http://localhost:8080', { waitUntil: 'networkidle0' });
-
+    await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });
     await page.pdf(options);
-
     await browser.close();
 }
 
@@ -215,7 +214,7 @@ const generateDeveloperProfile = async () => {
             }).listen(8080);
         }
 
-        printPDF();
+        await printPDF();
 
     } catch (error) {
         console.log(error);
