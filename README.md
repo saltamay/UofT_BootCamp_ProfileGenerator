@@ -9,17 +9,27 @@ Node.js application that dynamically generates a PDF profile from a GitHub usern
 1. [Business Context](#business-context)
 1. [Development Strategy](#development-strategy)
 1. [Built With](#built-with)
+1. [Demo](#demo)
 1. [Minimum Requirements](#minimum-requirements)
 1. [Submission](#submission)
 
 ## About
+
+Developer profile generator accepts 2 inputs from the user. GitHub handle and favorite color and dynamically genrates developer's profile landing page including developer's the following:
+
+    - Picture
+    - Name
+    - Current Position
+    - Links to Google Maps location, GitHub and personal blog
+
+It also populates developer's GitHub details like the number of public repos, followers, following and total stars by using [GitHub API](https://developer.github.com/v3/).
 
 ## Getting Started
 
 The application is invoked with the following command:
 
 ```sh
-node index.js
+npm start
 ```
 
 ## Business Context
@@ -71,6 +81,11 @@ The PDF will be populated with the following:
 * [Inquirer](https://www.npmjs.com/package/inquirer) -- Interactive CLI
 * [Axios](https://www.npmjs.com/package/axios) -- Promise based HTTP client for the browser and node.js
 * [Puppeteer](https://www.npmjs.com/package/puppeteer) -- Generate screenshots and PDFs of pages.
+* [GitHub API](https://developer.github.com/v3/)
+
+## Demo
+
+[demo](./assets/profile-generator-demo.gif)
 
 ## Minimum Requirements
 
