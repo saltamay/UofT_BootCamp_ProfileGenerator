@@ -25,9 +25,19 @@ module.exports = function User() {
 
         let userDetails = await axios.get(`https://api.github.com/users/${userInput.login}`);
 
+        // Get user's repos' star count
+        let userRepos = await axios.get(`https://api.github.com/users/${userInput.login}/repos`);
+
+        let totalStarCount = 0;
+        for (let index = 0; index < userRepos.data.length; index++) {
+            const element = userRepos.data[index];
+            totalStarCount += element['stargazers_count'];
+        }
+
         this.userDetails = {
             ...userInput,
-            ...userDetails.data
+            ...userDetails.data,
+            'stargazers_count': totalStarCount
         };
 
         return this.userDetails;

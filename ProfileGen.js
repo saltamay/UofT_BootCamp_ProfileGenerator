@@ -11,6 +11,7 @@ module.exports = function ProfileGen(userInfo) {
     this.public_repos = userInfo.public_repos;
     this.followers = userInfo.followers;
     this.following = userInfo.following;
+    this.stargazers_count = userInfo['stargazers_count'];
 
     this.colors = {
         green: {
@@ -211,7 +212,7 @@ module.exports = function ProfileGen(userInfo) {
                         </div>
                         <div class="card col">
                         <h4>GitHub Stars</h4>
-                        <h5>${this.stars}</h5>
+                        <h5>${this.stargazers_count}</h5>
                         </div>
                     </div>
                     <div class="col">
