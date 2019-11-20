@@ -85,7 +85,7 @@ The PDF will be populated with the following:
 
 ## Demo
 
-[demo](./assets/profile-generator-demo.gif)
+![demo](./assets/profile-generator-demo.gif?raw=true)
 
 ## Minimum Requirements
 
