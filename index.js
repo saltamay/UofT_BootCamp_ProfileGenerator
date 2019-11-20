@@ -1,7 +1,6 @@
 const fs = require('fs');
 const http = require('http');
 const puppeteer = require('puppeteer');
-const Profile = require('./Profile');
 const ProfileGen = require('./ProfileGen');
 const User = require('./User');
 
@@ -24,24 +23,28 @@ function App() {
     }
 
     this.printPDF = async function () {
-        const browser = await puppeteer.launch({ headless: true });
-        const page = await browser.newPage();
-        const options = {
-            path: './profile.pdf',
-            printBackground: true,
-            format: 'A4',
-            pageRanges: '1'
+        try {
+            const browser = await puppeteer.launch({ headless: true });
+            const page = await browser.newPage();
+            const options = {
+                path: 'profile.pdf',
+                printBackground: true,
+                format: 'A4',
+                pageRanges: '1'
+            }
+
+            await page.setViewport({
+                width: 1440,
+                height: 900,
+                deviceScaleFactor: 2,
+            });
+
+            await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });
+            await page.pdf(options);
+            await browser.close();
+        } catch (error) {
+            console.log(error);
         }
-
-        await page.setViewport({
-            width: 1440,
-            height: 900,
-            deviceScaleFactor: 2,
-        });
-
-        await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });
-        await page.pdf(options);
-        await browser.close();
     }
 
     this.generateDeveloperProfile = async function () {
