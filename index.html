@@ -1,45 +1,4 @@
-module.exports = function ProfileGen(userInfo) {
-
-    this.name = userInfo.name;
-    this.gitHubURL = userInfo.html_url;
-    this.color = userInfo.color;
-    this.img = userInfo.avatar_url;
-    this.bio = userInfo.bio;
-    this.blog = userInfo.blog;
-    this.location = userInfo.location;
-    this.company = userInfo.company;
-    this.public_repos = userInfo.public_repos;
-    this.followers = userInfo.followers;
-    this.following = userInfo.following;
-    this.stargazers_count = userInfo['stargazers_count'];
-
-    this.colors = {
-        green: {
-            wrapperBackground: "#E6E1C3",
-            headerBackground: "#C1C72C",
-            headerColor: "black",
-            photoBorderColor: "#black"
-        },
-        blue: {
-            wrapperBackground: "#5F64D3",
-            headerBackground: "#26175A",
-            headerColor: "white",
-            photoBorderColor: "#73448C"
-        },
-        pink: {
-            wrapperBackground: "#879CDF",
-            headerBackground: "#FF8374",
-            headerColor: "white",
-            photoBorderColor: "#FEE24C"
-        },
-        red: {
-            wrapperBackground: "#DE9967",
-            headerBackground: "#870603",
-            headerColor: "white",
-            photoBorderColor: "white"
-        }
-    };
-    this.html = `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
      <head>
         <meta charset="UTF-8" />
@@ -66,7 +25,7 @@ module.exports = function ProfileGen(userInfo) {
            height: 100%;
            }
            .wrapper {
-           background-color: ${this.colors[this.color].wrapperBackground};
+           background-color: #E6E1C3;
            padding-top: 100px;
            }
            body {
@@ -108,8 +67,8 @@ module.exports = function ProfileGen(userInfo) {
            display: flex;
            justify-content: center;
            flex-wrap: wrap;
-           background-color: ${this.colors[this.color].headerBackground};
-           color: ${this.colors[this.color].headerColor};
+           background-color: #C1C72C;
+           color: black;
            padding: 10px;
            width: 95%;
            border-radius: 6px;
@@ -120,7 +79,7 @@ module.exports = function ProfileGen(userInfo) {
            border-radius: 50%;
            object-fit: cover;
            margin-top: -75px;
-           border: 6px solid ${this.colors[this.color].photoBorderColor};
+           border: 6px solid #black;
            box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
            }
            .photo-header h1, .photo-header h2 {
@@ -163,8 +122,8 @@ module.exports = function ProfileGen(userInfo) {
            .card {
              padding: 20px;
              border-radius: 6px;
-             background-color: ${this.colors[this.color].headerBackground};
-             color: ${this.colors[this.color].headerColor};
+             background-color: #C1C72C;
+             color: black;
              margin: 20px;
            }
            
@@ -189,40 +148,40 @@ module.exports = function ProfileGen(userInfo) {
         <body>
         <div class="wrapper">
            <div class="photo-header">
-                <img src="${this.img}" alt="Developer Profile Image">
+                <img src="https://avatars1.githubusercontent.com/u/16465530?v=4" alt="Developer Profile Image">
                 <h1>Hi!</h1>
-                <h2>My name is ${this.name}!</h2>
-                <h4>Currently @ ${this.company}</h4>
+                <h2>My name is null!</h2>
+                <h4>Currently @ null</h4>
                 <ul class="links-nav">
-                    <li class="nav-link"><a href="http://maps.google.com/?q=${this.location}"><i class="fas fa-location-arrow"></i> ${this.location}</a></li>
-                    <li class="nav-link"><a href="${this.gitHubURL}"><i class="fab fa-github-alt"></i> GitHub</a></li>
-                    <li class=" nav-link"><a href="${this.blog}"><i class="fas fa-rss"></i> Blog</a></li>
+                    <li class="nav-link"><a href="http://maps.google.com/?q=null"><i class="fas fa-location-arrow"></i> null</a></li>
+                    <li class="nav-link"><a href="https://github.com/udugam"><i class="fab fa-github-alt"></i> GitHub</a></li>
+                    <li class=" nav-link"><a href=""><i class="fas fa-rss"></i> Blog</a></li>
                 </ul>
             </div>
         <main>
             <div class="container">
                 <div class="row">
-                    <h5 class="col">${this.bio}</h5>
+                    <h5 class="col">null</h5>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="card">
                         <h4>Public Reposorities</h4>
-                        <h5>${this.public_repos}</h5>
+                        <h5>40</h5>
                         </div>
                         <div class="card col">
                         <h4>GitHub Stars</h4>
-                        <h5>${this.stargazers_count}</h5>
+                        <h5>7</h5>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
                         <h4>Followers</h4>
-                        <h5>${this.followers}</h5>
+                        <h5>3</h5>
                         </div>
                         <div class="card col">
                         <h4>Following</h4>
-                        <h5>${this.following}</h5>
+                        <h5>1</h5>
                         </div>
                     </div>
                 </div>
@@ -230,6 +189,4 @@ module.exports = function ProfileGen(userInfo) {
         </main>
     </div>
 </body>
-</html>`;
-
-}
+</html>
