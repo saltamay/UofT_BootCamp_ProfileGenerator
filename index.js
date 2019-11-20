@@ -2,6 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const puppeteer = require('puppeteer');
 const Profile = require('./Profile');
+const ProfileGen = require('./ProfileGen');
 const User = require('./User');
 
 
@@ -50,7 +51,7 @@ function App() {
             const user = new User();
             const userDetails = await user.getUserDetails();
 
-            const profile = new Profile(userDetails);
+            const profile = new ProfileGen(userDetails);
             const profileHTML = profile.html;
 
             const responseHTML = await this.writeFileAsync('index.html', profileHTML);
